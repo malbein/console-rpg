@@ -1,5 +1,7 @@
 package com.cfrpg.mgraz.domain;
 
+import com.cfrpg.mgraz.domain.character.Character;
+import com.cfrpg.mgraz.domain.character.Warrior;
 import com.cfrpg.mgraz.exception.DeadException;
 import org.junit.Test;
 

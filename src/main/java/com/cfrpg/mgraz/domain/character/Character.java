@@ -1,4 +1,4 @@
-package com.cfrpg.mgraz.domain;
+package com.cfrpg.mgraz.domain.character;
 
 import com.cfrpg.mgraz.exception.DeadException;
 

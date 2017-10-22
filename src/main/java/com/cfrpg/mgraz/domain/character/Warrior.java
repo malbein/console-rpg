@@ -1,6 +1,4 @@
-package com.cfrpg.mgraz.domain;
-
-import java.util.List;
+package com.cfrpg.mgraz.domain.character;
 
 /**
  * Created by mgraz1 on 10/21/17.

@@ -1,4 +1,4 @@
-package com.cfrpg.mgraz.domain;
+package com.cfrpg.mgraz.domain.character;
 
 /**
  * Created by mgraz1 on 10/21/17.
