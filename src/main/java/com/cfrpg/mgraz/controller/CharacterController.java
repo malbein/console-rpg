@@ -28,9 +28,12 @@ public class CharacterController {
     }
 
     public void startCharacter(){
-        System.out.print("Please select a character name: ");
-        Scanner scanIn = new Scanner(System.in);
-        String characterName = scanIn.nextLine();
+        String characterName;
+        do{
+            System.out.print("Please select a character name: ");
+            Scanner scanIn = new Scanner(System.in);
+            characterName = scanIn.nextLine();
+        }while(characterName.isEmpty());
 
         if(!CharacterProvider.getInstance().existCharacter(characterName)){
             createCharacter(characterName);
