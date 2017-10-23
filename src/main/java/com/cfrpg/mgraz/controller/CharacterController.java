@@ -75,12 +75,22 @@ public class CharacterController {
     }
 
     public void printDetail(){
-        System.out.println("Character Information");
+        System.out.println();
+        System.out.println("### Character Information ###");
         System.out.println("---------------------------------------------------------");
         System.out.println("Class: ".concat(character.getClassName()));
         System.out.println("Name: ".concat(character.getName()));
         System.out.println("Level: ".concat(character.getCurrentLevel().toString()));
         System.out.println("Hit Points: ".concat(character.getHealth().toString()));
+        System.out.println("Damage: ".concat(character.doDamage().toString()));
         System.out.println("---------------------------------------------------------");
+
+        System.out.println("Press enter to continue");
+        Scanner scanIn = new Scanner(System.in);
+        scanIn.nextLine();
+    }
+
+    public void rest(){
+        character.rest();
     }
 }

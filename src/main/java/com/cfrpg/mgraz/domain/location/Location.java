@@ -1,5 +1,7 @@
 package com.cfrpg.mgraz.domain.location;
 
+import java.util.List;
+
 /**
  * Created by mgraz1 on 10/22/17.
  */
@@ -43,5 +45,5 @@ public abstract class Location {
         this.next = next;
     }
 
-    public abstract void actionOptions();
+    public abstract List<String> actionOptions();
 }

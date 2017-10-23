@@ -1,11 +1,12 @@
 package com.cfrpg.mgraz.domain.character;
 
+import com.cfrpg.mgraz.domain.Attacker;
 import com.cfrpg.mgraz.exception.DeadException;
 
 /**
  * Created by mgraz1 on 10/21/17.
  */
-public abstract class Character {
+public abstract class Character implements Attacker{
 
     private String name;
 
@@ -53,11 +54,11 @@ public abstract class Character {
         }
     }
 
+    public void rest(){
+        this.health = this.getMaxHealth();
+    }
+
     public abstract String getClassName();
-
-    public abstract String[] getActionList();
-
-    public abstract void doAction(String action);
 
     protected abstract Integer getMaxHealth();
 }

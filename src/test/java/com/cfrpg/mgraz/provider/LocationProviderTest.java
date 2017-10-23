@@ -24,7 +24,7 @@ public class LocationProviderTest {
         InitialInformation.locations();
         LocationProvider.getInstance().moveNextLocation();
 
-        assertEquals("Orc Lair", LocationProvider.getInstance().getCurrentLocation().getName());
+        assertEquals("Orc Camp", LocationProvider.getInstance().getCurrentLocation().getName());
         assertNotEquals(LocationProvider.getInstance().getInitialLocation(), LocationProvider.getInstance().getCurrentLocation());
         assertEquals(LocationProvider.getInstance().getLocation(LocationProvider.getInstance().getInitialLocation().getName()), LocationProvider.getInstance().getInitialLocation());
     }

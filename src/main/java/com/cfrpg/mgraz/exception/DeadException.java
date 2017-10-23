@@ -8,4 +8,8 @@ public class DeadException extends Exception{
     public DeadException(){
         super("You have been Killed");
     }
+
+    public DeadException(String message){
+        super(message);
+    }
 }

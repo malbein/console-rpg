@@ -21,11 +21,7 @@ public class Mage extends Character{
         return "Mage";
     }
 
-    public String[] getActionList() {
-        return new String[] {"arcane bolt"};
-    }
-
-    public void doAction(String action) {
-
+    public Integer doDamage(){
+        return 5 + (super.getCurrentLevel()/3);
     }
 }

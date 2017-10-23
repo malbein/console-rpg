@@ -10,6 +10,7 @@ import com.cfrpg.mgraz.domain.location.Location;
 public class ConsoleMain {
 
     public static void main(String[] args) {
+        InitialInformation.monsters();
         InitialInformation.locations();
 
         System.out.println("Welcome to Console Fantasy RPG");

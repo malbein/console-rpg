@@ -21,11 +21,7 @@ public class Warrior extends Character{
         return "Warrior";
     }
 
-    public String[] getActionList() {
-        return new String[] {"sword attack"};
-    }
-
-    public void doAction(String action) {
-
+    public Integer doDamage(){
+        return 4 + (super.getCurrentLevel()/4);
     }
 }

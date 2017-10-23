@@ -76,7 +76,8 @@ public class WarriorTest {
 
         assertEquals(Integer.valueOf(10), character.getHealth());
         try{
-            character.receiveDamage(15);
+            character.receiveDamage(6);
+            character.receiveDamage(6);
             fail();
         }catch (DeadException e){
 
@@ -103,4 +104,23 @@ public class WarriorTest {
         assertEquals(Integer.valueOf(100), character.getHealth());
     }
 
+    @Test
+    public void getHurtAndRest(){
+        Character character = new Warrior("test");
+
+        assertEquals(Integer.valueOf(10), character.getHealth());
+        try{
+            character.receiveDamage(5);
+            assertEquals(Integer.valueOf(5), character.getHealth());
+        }catch (DeadException e){
+            fail();
+        }
+
+        character.rest();
+
+        assertEquals("Warrior", character.getClassName());
+        assertEquals("test", character.getName());
+        assertEquals(Integer.valueOf(1), character.getCurrentLevel());
+        assertEquals(Integer.valueOf(10), character.getHealth());
+    }
 }
