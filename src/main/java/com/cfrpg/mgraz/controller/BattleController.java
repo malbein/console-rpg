@@ -6,6 +6,7 @@ import com.cfrpg.mgraz.domain.location.Dungeon;
 import com.cfrpg.mgraz.domain.location.Location;
 import com.cfrpg.mgraz.exception.DeadException;
 import com.cfrpg.mgraz.exception.MonsterDeadException;
+import com.cfrpg.mgraz.provider.CharacterProvider;
 import com.cfrpg.mgraz.provider.LocationProvider;
 
 import java.util.Scanner;
@@ -29,7 +30,7 @@ public class BattleController {
     }
 
     public boolean match(Location location) {
-        Character character = CharacterController.getInstance().getCharacter();
+        Character character = CharacterProvider.getInstance().getCharacter();
         Monster monster = ((Dungeon)location).getMonster();
         monster.reset();
 
@@ -56,6 +57,7 @@ public class BattleController {
             System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
             System.out.println(monster.getName().concat(" have kill you!!!"));
             LocationProvider.getInstance().setCurrentLocation(LocationProvider.getInstance().getInitialLocation());
+            character.rest();
             resp = false;
             System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
             System.out.println("    ######### BATTLE ENDS #########    ");

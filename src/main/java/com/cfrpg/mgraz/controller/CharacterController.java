@@ -3,7 +3,10 @@ package com.cfrpg.mgraz.controller;
 import com.cfrpg.mgraz.domain.character.Character;
 import com.cfrpg.mgraz.domain.character.Mage;
 import com.cfrpg.mgraz.domain.character.Warrior;
+import com.cfrpg.mgraz.provider.CharacterProvider;
 
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.util.Scanner;
 
 /**
@@ -12,7 +15,6 @@ import java.util.Scanner;
 public class CharacterController {
 
     private static CharacterController instance;
-    private Character character;
 
     private CharacterController(){
 
@@ -30,7 +32,7 @@ public class CharacterController {
         Scanner scanIn = new Scanner(System.in);
         String characterName = scanIn.nextLine();
 
-        if(!existCharacter(characterName)){
+        if(!CharacterProvider.getInstance().existCharacter(characterName)){
             createCharacter(characterName);
         }
     }
@@ -55,26 +57,18 @@ public class CharacterController {
                 System.exit(0);
             }
             if(classOption.equals("w")){
-                character = new Warrior(characterName);
+                CharacterProvider.getInstance().createWarrior(characterName);
                 created = true;
             }
             if(classOption.equals("m")){
-                character = new Mage(characterName);
+                CharacterProvider.getInstance().createMage(characterName);
                 created = true;
             }
         }while (!created);
     }
 
-    public Character getCharacter(){
-        return character;
-    }
-
-    private boolean existCharacter(String characterName){
-        //TODO should check if the character already exist on the app
-        return false;
-    }
-
     public void printDetail(){
+        Character character = CharacterProvider.getInstance().getCharacter();
         System.out.println();
         System.out.println("### Character Information ###");
         System.out.println("---------------------------------------------------------");
@@ -88,9 +82,5 @@ public class CharacterController {
         System.out.println("Press enter to continue");
         Scanner scanIn = new Scanner(System.in);
         scanIn.nextLine();
-    }
-
-    public void rest(){
-        character.rest();
     }
 }

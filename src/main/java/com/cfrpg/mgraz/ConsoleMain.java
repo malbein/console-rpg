@@ -2,7 +2,13 @@ package com.cfrpg.mgraz;
 
 import com.cfrpg.mgraz.controller.CharacterController;
 import com.cfrpg.mgraz.controller.LocationController;
+import com.cfrpg.mgraz.domain.character.Character;
 import com.cfrpg.mgraz.domain.location.Location;
+import com.cfrpg.mgraz.provider.CharacterProvider;
+import com.cfrpg.mgraz.provider.LocationProvider;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 
 /**
  * Created by mgraz1 on 10/22/17.
@@ -23,6 +29,13 @@ public class ConsoleMain {
             endStory = LocationController.getInstance().travel();
         }while(!endStory);
 
-        //TODO SAVE GAME
+        try{
+            //SAVE GAME
+            CharacterProvider.getInstance().saveCharacter();
+            LocationProvider.getInstance().saveLocation();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 }

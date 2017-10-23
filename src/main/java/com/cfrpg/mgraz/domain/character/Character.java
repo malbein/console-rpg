@@ -3,10 +3,12 @@ package com.cfrpg.mgraz.domain.character;
 import com.cfrpg.mgraz.domain.Attacker;
 import com.cfrpg.mgraz.exception.DeadException;
 
+import java.io.Serializable;
+
 /**
  * Created by mgraz1 on 10/21/17.
  */
-public abstract class Character implements Attacker{
+public abstract class Character implements Attacker, Serializable{
 
     private String name;
 

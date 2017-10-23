@@ -1,5 +1,6 @@
 package com.cfrpg.mgraz.controller;
 
+import com.cfrpg.mgraz.provider.CharacterProvider;
 import com.cfrpg.mgraz.provider.LocationProvider;
 import com.cfrpg.mgraz.domain.location.Location;
 
@@ -77,11 +78,8 @@ public class LocationController {
                 System.out.println("ZZZZZZZZZZZZZZZZ.....");
                 System.out.println("You spend the night sleeping and get back all your health");
                 System.out.println("---------------------------------------------------------");
-                CharacterController.getInstance().rest();
+                CharacterProvider.getInstance().getCharacter().rest();
                 CharacterController.getInstance().printDetail();
-
-                System.out.println("Press enter to continue");
-                scanIn.nextLine();
             }
         }while(alive);
 

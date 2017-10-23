@@ -1,9 +1,12 @@
 package com.cfrpg.mgraz.provider;
 
+import com.cfrpg.mgraz.domain.character.Character;
 import com.cfrpg.mgraz.domain.location.Location;
 
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * Created by mgraz1 on 10/22/17.
@@ -59,4 +62,31 @@ public class LocationProvider {
         currentLocation = currentLocation.getPrevius();
     }
 
+    public void saveLocation(){
+        try{
+            String fileName = CharacterProvider.getInstance().getCharacter().getName().concat(".location.cfrpg");
+            FileWriter fileWriter = new FileWriter(fileName);
+            fileWriter.write(currentLocation.getName());
+            fileWriter.close();
+        }catch (Exception e){
+
+        }
+    }
+
+    public void loadLocation(){
+        try{
+            String fileName = CharacterProvider.getInstance().getCharacter().getName().concat(".location.cfrpg");
+            FileReader fileReader = new FileReader(fileName);
+            Scanner scanner = new Scanner(fileReader);
+            String locationName = scanner.nextLine();
+            Location location = getLocation(locationName);
+            if(location != null){
+                currentLocation = location;
+            }else{
+                System.out.println("···· LOCATION NOT LOADED ······");
+            }
+        }catch (Exception e){
+            System.out.println("···· LOCATION NOT LOADED ······");
+        }
+    }
 }

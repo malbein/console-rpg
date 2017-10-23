@@ -1,11 +1,12 @@
 package com.cfrpg.mgraz.domain.location;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by mgraz1 on 10/22/17.
  */
-public abstract class Location {
+public abstract class Location implements Serializable {
 
     private Location previus;
     private Location next;
