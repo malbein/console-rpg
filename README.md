@@ -18,4 +18,4 @@ This is a console fantasy RPG made in java without any external library.
 
 Hope you enjoy it!!!!
 
-Matias Graziani
+_**Matias Graziani**_
