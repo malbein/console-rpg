@@ -55,8 +55,14 @@ public class LocationController {
             String option = scanIn.nextLine();
 
             if(option.equals("exit")){
+                System.out.println();
                 System.out.println("Thanks for playing Console Fantasy RPG");
-                System.out.println("See you soon!!!");
+                System.out.println( "██████╗ ██╗   ██╗███████╗    ██████╗ ██╗   ██╗███████╗\n" +
+                                    "██╔══██╗╚██╗ ██╔╝██╔════╝    ██╔══██╗╚██╗ ██╔╝██╔════╝\n" +
+                                    "██████╔╝ ╚████╔╝ █████╗      ██████╔╝ ╚████╔╝ █████╗  \n" +
+                                    "██╔══██╗  ╚██╔╝  ██╔══╝      ██╔══██╗  ╚██╔╝  ██╔══╝  \n" +
+                                    "██████╔╝   ██║   ███████╗    ██████╔╝   ██║   ███████╗\n" +
+                                    "╚═════╝    ╚═╝   ╚══════╝    ╚═════╝    ╚═╝   ╚══════╝");
                 finish = true;
                 alive = false;
             }
@@ -74,10 +80,13 @@ public class LocationController {
 
             //Rest has been choice
             if(option.equals("rest")){
-                System.out.println("---------------------------------------------------------");
-                System.out.println("ZZZZ....");
-                System.out.println("ZZZZZZZZZ......");
-                System.out.println("ZZZZZZZZZZZZZZZZ.....");
+                System.out.println();
+                System.out.println( "██████╗  ██████╗  ██████╗ ██████╗     ███╗   ██╗██╗ ██████╗ ██╗  ██╗████████╗\n" +
+                                    "██╔════╝ ██╔═══██╗██╔═══██╗██╔══██╗    ████╗  ██║██║██╔════╝ ██║  ██║╚══██╔══╝\n" +
+                                    "██║  ███╗██║   ██║██║   ██║██║  ██║    ██╔██╗ ██║██║██║  ███╗███████║   ██║   \n" +
+                                    "██║   ██║██║   ██║██║   ██║██║  ██║    ██║╚██╗██║██║██║   ██║██╔══██║   ██║   \n" +
+                                    "╚██████╔╝╚██████╔╝╚██████╔╝██████╔╝    ██║ ╚████║██║╚██████╔╝██║  ██║   ██║   \n" +
+                                    " ╚═════╝  ╚═════╝  ╚═════╝ ╚═════╝     ╚═╝  ╚═══╝╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝  ");
                 System.out.println("You spend the night sleeping and get back all your health");
                 System.out.println("---------------------------------------------------------");
                 CharacterProvider.getInstance().getCharacter().rest();

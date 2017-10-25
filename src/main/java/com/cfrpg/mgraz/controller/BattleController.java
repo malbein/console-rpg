@@ -38,7 +38,13 @@ public class BattleController {
 
         boolean resp = true;
         try{
-            System.out.println("    ######### BATTLE BEGINS #########    ");
+            System.out.println();
+            System.out.println(" ███████╗██╗ ██████╗ ██╗  ██╗████████╗\n" +
+                                "██╔════╝██║██╔════╝ ██║  ██║╚══██╔══╝\n" +
+                                "█████╗  ██║██║  ███╗███████║   ██║   \n" +
+                                "██╔══╝  ██║██║   ██║██╔══██║   ██║   \n" +
+                                "██║     ██║╚██████╔╝██║  ██║   ██║   \n" +
+                                "╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   \n");
             while(true){
                 System.out.println("## You attack Monster ##");
                 System.out.println(" ---> You do ".concat(character.doDamage().toString()).concat(" damage."));
@@ -48,10 +54,14 @@ public class BattleController {
                 character.receiveDamage(monster.doDamage());
             }
         }catch (MonsterDeadException ex){
-            System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-            System.out.println("You have kill ".concat(monster.getName()).concat("!!!"));
-            System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-            System.out.println("    ######### BATTLE ENDS #########    ");
+            System.out.println();
+            System.out.println( "██╗    ██╗██╗███╗   ██╗███╗   ██╗███████╗██████╗ \n" +
+                                "██║    ██║██║████╗  ██║████╗  ██║██╔════╝██╔══██╗\n" +
+                                "██║ █╗ ██║██║██╔██╗ ██║██╔██╗ ██║█████╗  ██████╔╝\n" +
+                                "██║███╗██║██║██║╚██╗██║██║╚██╗██║██╔══╝  ██╔══██╗\n" +
+                                "╚███╔███╔╝██║██║ ╚████║██║ ╚████║███████╗██║  ██║\n" +
+                                " ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝    ");
+            System.out.println("You have kill the ".concat(monster.getName()).concat("!!!"));
 
             character.gainExperience(monster.getXpReward());
             CharacterController.getInstance().printDetail();
@@ -62,10 +72,14 @@ public class BattleController {
             character.rest();
             resp = false;
 
-            System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+            System.out.println();
+            System.out.println(" ██████╗  █████╗ ██████╗     ██╗     ██╗   ██╗ ██████╗██╗  ██╗\n" +
+                                "██╔══██╗██╔══██╗██╔══██╗    ██║     ██║   ██║██╔════╝██║ ██╔╝\n" +
+                                "██████╔╝███████║██║  ██║    ██║     ██║   ██║██║     █████╔╝ \n" +
+                                "██╔══██╗██╔══██║██║  ██║    ██║     ██║   ██║██║     ██╔═██╗ \n" +
+                                "██████╔╝██║  ██║██████╔╝    ███████╗╚██████╔╝╚██████╗██║  ██╗\n" +
+                                "╚═════╝ ╚═╝  ╚═╝╚═════╝     ╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝");
             System.out.println(monster.getName().concat(" have kill you!!!"));
-            System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-            System.out.println("    ######### BATTLE ENDS #########    ");
 
             System.out.println("Press enter to continue");
             Scanner scanIn = new Scanner(System.in);
