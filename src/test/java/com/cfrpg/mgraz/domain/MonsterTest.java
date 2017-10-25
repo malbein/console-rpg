@@ -24,6 +24,7 @@ public class MonsterTest {
         assertEquals(monster.getHealth(), monster.getMaxHealth());
         assertEquals(Integer.valueOf(7), monster.doDamage());
         assertEquals(Integer.valueOf(50), monster.getXpReward());
+        assertEquals(Integer.valueOf(7), monster.doDamage());
     }
 
     @Test

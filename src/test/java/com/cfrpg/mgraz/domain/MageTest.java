@@ -1,6 +1,5 @@
 package com.cfrpg.mgraz.domain;
 
-import com.cfrpg.mgraz.domain.character.Mage;
 import com.cfrpg.mgraz.exception.DeadException;
 import com.cfrpg.mgraz.provider.CharacterProvider;
 import org.junit.Test;
@@ -22,6 +21,7 @@ public class MageTest {
         assertEquals("test", character.getName());
         assertEquals(Integer.valueOf(1), character.getCurrentLevel());
         assertEquals(Integer.valueOf(5), character.getHealth());
+        assertEquals(Integer.valueOf(4), character.doDamage());
     }
 
     @Test

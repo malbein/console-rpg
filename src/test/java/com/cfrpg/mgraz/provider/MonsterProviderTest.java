@@ -26,4 +26,5 @@ public class MonsterProviderTest {
 
         assertEquals(monsterName, MonsterProvider.getInstance().getMonster(monsterName).getName());
     }
+
 }

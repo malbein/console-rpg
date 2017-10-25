@@ -21,7 +21,7 @@ public class InitialInformation {
 
         Dungeon dungeon1 = new Dungeon();
         dungeon1.setName("Orc Camp");
-        dungeon1.setIntro("You found a camp with a fire, when you look more in detail you see an orc next to the fire");
+        dungeon1.setIntro("You found a camp with a fire, when you look more in detail you see an orc next to the fire.");
         dungeon1.setMonster(MonsterProvider.getInstance().getMonster("Orc"));
         city1.setNext(dungeon1);
         dungeon1.setPrevius(city1);
@@ -44,7 +44,7 @@ public class InitialInformation {
 
         City city3 = new City();
         city3.setName("City of the Dragon");
-        city3.setIntro("This is the City of the Dragon, is a small city that rest at the bottom of a vulcan");
+        city3.setIntro("This is the City of the Dragon, is a small city that rest at the bottom of a vulcan.");
         dungeon2.setNext(city3);
         city3.setPrevius(dungeon2);
         provider.addLocation(city3);

@@ -1,8 +1,8 @@
 package com.cfrpg.mgraz.domain;
 
-import com.cfrpg.mgraz.domain.character.Warrior;
 import com.cfrpg.mgraz.exception.DeadException;
 import com.cfrpg.mgraz.provider.CharacterProvider;
+import com.cfrpg.mgraz.provider.CharacterProviderTest;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -21,6 +21,7 @@ public class WarriorTest {
         assertEquals("test", character.getName());
         assertEquals(Integer.valueOf(1), character.getCurrentLevel());
         assertEquals(Integer.valueOf(10), character.getHealth());
+        assertEquals(Integer.valueOf(4), character.doDamage());
     }
 
     @Test
