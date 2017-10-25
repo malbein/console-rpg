@@ -2,7 +2,7 @@
 
 This is a console fantasy RPG made in java without any external library.
 
-##Extending the code
+## Extending the code
 - Download the code: `git clone https://github.com/malbein/console-rpg.git`
 - Compile the code: `mvn package`
 
