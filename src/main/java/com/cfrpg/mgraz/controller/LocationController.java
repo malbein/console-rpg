@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 /**
  * Created by mgraz1 on 10/22/17.
+ *
+ * This is a presentation class that shows the locations
  */
 public class LocationController {
 
@@ -41,37 +43,37 @@ public class LocationController {
             });
 
             if(location.getPrevius() != null){
-                System.out.println("r - return to ".concat(location.getPrevius().getName()));
+                System.out.println("return - return to ".concat(location.getPrevius().getName()));
             }
             if(location.getNext() != null){
-                System.out.println("n - move to ".concat(location.getNext().getName()));
+                System.out.println("move - move to ".concat(location.getNext().getName()));
             }
-            System.out.println("x - Exit");
+            System.out.println("exit - Save and Exit game");
             System.out.print("Choice: ");
 
             Scanner scanIn = new Scanner(System.in);
             String option = scanIn.nextLine();
 
-            if(option.equals("x")){
+            if(option.equals("exit")){
                 System.out.println("Thanks for playing Console Fantasy RPG");
                 System.out.println("See you soon!!!");
                 finish = true;
                 alive = false;
             }
-            if(location.getPrevius() != null && option.equals("r")){
+            if(location.getPrevius() != null && option.equals("return")){
                 LocationProvider.getInstance().movePreviousLocation();
             }
-            if(location.getNext() != null && option.equals("n")){
+            if(location.getNext() != null && option.equals("move")){
                 LocationProvider.getInstance().moveNextLocation();
             }
 
             //Attack has been choice
-            if(option.equals("a")){
+            if(option.equals("attack")){
                 alive = BattleController.getInstance().match(location);
             }
 
             //Rest has been choice
-            if(option.equals("h")){
+            if(option.equals("rest")){
                 System.out.println("---------------------------------------------------------");
                 System.out.println("ZZZZ....");
                 System.out.println("ZZZZZZZZZ......");

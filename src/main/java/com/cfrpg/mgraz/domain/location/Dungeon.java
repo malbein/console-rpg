@@ -14,7 +14,7 @@ public class Dungeon extends Location {
 
     public List<String> actionOptions(){
         List<String> list = new ArrayList<String>();
-        list.add("a - attack");
+        list.add("attack - Engage in battle");
         return list;
     }
 

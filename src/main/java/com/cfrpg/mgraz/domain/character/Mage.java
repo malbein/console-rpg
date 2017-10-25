@@ -1,27 +1,24 @@
 package com.cfrpg.mgraz.domain.character;
 
+import com.cfrpg.mgraz.domain.Character;
+
 /**
  * Created by mgraz1 on 10/21/17.
  */
-public class Mage extends Character{
+public class Mage extends Role {
 
-    public Mage(String name, Integer experience){
-        super(name, experience);
-    }
-
-    public Mage(String name){
-        super(name, 0);
-    }
-
-    protected Integer getMaxHealth(){
-        return 5*super.getCurrentLevel();
-    }
-
+    @Override
     public String getClassName() {
         return "Mage";
     }
 
-    public Integer doDamage(){
-        return 5 + (super.getCurrentLevel()/3);
+    @Override
+    public int hpMult() {
+        return 5;
+    }
+
+    @Override
+    public int damagePerLvl() {
+        return 3;
     }
 }

@@ -1,27 +1,24 @@
 package com.cfrpg.mgraz.domain.character;
 
+import com.cfrpg.mgraz.domain.Character;
+
 /**
  * Created by mgraz1 on 10/21/17.
  */
-public class Warrior extends Character{
+public class Warrior extends Role {
 
-    public Warrior(String name, Integer experience){
-        super(name, experience);
-    }
-
-    public Warrior(String name){
-        super(name, 0);
-    }
-
-    protected Integer getMaxHealth(){
-        return 10*super.getCurrentLevel();
-    }
-
+    @Override
     public String getClassName() {
         return "Warrior";
     }
 
-    public Integer doDamage(){
-        return 4 + (super.getCurrentLevel()/4);
+    @Override
+    public int hpMult() {
+        return 10;
+    }
+
+    @Override
+    public int damagePerLvl() {
+        return 4;
     }
 }

@@ -6,27 +6,15 @@ import com.cfrpg.mgraz.exception.DeadException;
 import java.io.Serializable;
 
 /**
- * Created by mgraz1 on 10/21/17.
+ * Created by mgraz1 on 10/24/17.
  */
-public abstract class Character implements Attacker, Serializable{
-
-    private String name;
+public abstract class Role implements Attacker, Serializable {
 
     private Integer experience = 0;
 
-    private Integer currentLevel = 0;
-
     private Integer health;
 
-    public Character(String name, Integer experience){
-        this.name = name;
-        this.gainExperience(experience);
-        this.health = this.getMaxHealth();
-    }
-
-    public String getName() {
-        return name;
-    }
+    private Integer currentLevel = 0;
 
     public Integer getCurrentLevel() {
         return currentLevel;
@@ -41,17 +29,18 @@ public abstract class Character implements Attacker, Serializable{
         }
     }
 
+    protected Integer getMaxHealth(){
+        int hp = this.hpMult();
+        return hp*this.getCurrentLevel();
+    }
+
     public Integer getHealth(){
         return health;
     }
 
-    protected void setHealth(Integer health){
-        this.health = health;
-    }
-
-    public void receiveDamage(Integer damage) throws DeadException{
+    public void receiveDamage(Integer damage) throws DeadException {
         this.health -= damage;
-        if(health <= 0){
+        if(this.health <= 0){
             throw new DeadException();
         }
     }
@@ -62,5 +51,12 @@ public abstract class Character implements Attacker, Serializable{
 
     public abstract String getClassName();
 
-    protected abstract Integer getMaxHealth();
+    public abstract int hpMult();
+
+    public abstract int damagePerLvl();
+
+    public Integer doDamage(){
+        int damage = this.damagePerLvl();
+        return 4 + (this.getCurrentLevel()/damage);
+    }
 }

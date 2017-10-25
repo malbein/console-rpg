@@ -1,8 +1,8 @@
 package com.cfrpg.mgraz.domain;
 
-import com.cfrpg.mgraz.domain.character.Character;
 import com.cfrpg.mgraz.domain.character.Warrior;
 import com.cfrpg.mgraz.exception.DeadException;
+import com.cfrpg.mgraz.provider.CharacterProvider;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -14,7 +14,8 @@ public class WarriorTest {
 
     @Test
     public void creationWarrior(){
-        Character character = new Warrior("test");
+        CharacterProvider.getInstance().createWarrior("test");
+        Character character = CharacterProvider.getInstance().getCharacter();
 
         assertEquals("Warrior", character.getClassName());
         assertEquals("test", character.getName());
@@ -23,18 +24,9 @@ public class WarriorTest {
     }
 
     @Test
-    public void creationXPWarrior(){
-        Character character = new Warrior("test", 98);
-
-        assertEquals("Warrior", character.getClassName());
-        assertEquals("test", character.getName());
-        assertEquals(Integer.valueOf(10), character.getCurrentLevel());
-        assertEquals(Integer.valueOf(100), character.getHealth());
-    }
-
-    @Test
     public void gainExperienceToLvlUp(){
-        Character character = new Warrior("test");
+        CharacterProvider.getInstance().createWarrior("test");
+        Character character = CharacterProvider.getInstance().getCharacter();
 
         character.gainExperience(90);
 
@@ -46,7 +38,8 @@ public class WarriorTest {
 
     @Test
     public void gainLittleExperience(){
-        Character character = new Warrior("test");
+        CharacterProvider.getInstance().createWarrior("test");
+        Character character = CharacterProvider.getInstance().getCharacter();
 
         character.gainExperience(6);
 
@@ -59,7 +52,8 @@ public class WarriorTest {
 
     @Test
     public void getHurt(){
-        Character character = new Warrior("test");
+        CharacterProvider.getInstance().createWarrior("test");
+        Character character = CharacterProvider.getInstance().getCharacter();
 
         assertEquals(Integer.valueOf(10), character.getHealth());
         try{
@@ -72,7 +66,8 @@ public class WarriorTest {
 
     @Test
     public void getKill(){
-        Character character = new Warrior("test");
+        CharacterProvider.getInstance().createWarrior("test");
+        Character character = CharacterProvider.getInstance().getCharacter();
 
         assertEquals(Integer.valueOf(10), character.getHealth());
         try{
@@ -86,7 +81,8 @@ public class WarriorTest {
 
     @Test
     public void getHurtAndXP(){
-        Character character = new Warrior("test");
+        CharacterProvider.getInstance().createWarrior("test");
+        Character character = CharacterProvider.getInstance().getCharacter();
 
         assertEquals(Integer.valueOf(10), character.getHealth());
         try{
@@ -106,7 +102,8 @@ public class WarriorTest {
 
     @Test
     public void getHurtAndRest(){
-        Character character = new Warrior("test");
+        CharacterProvider.getInstance().createWarrior("test");
+        Character character = CharacterProvider.getInstance().getCharacter();
 
         assertEquals(Integer.valueOf(10), character.getHealth());
         try{

@@ -1,16 +1,14 @@
 package com.cfrpg.mgraz.controller;
 
-import com.cfrpg.mgraz.domain.character.Character;
-import com.cfrpg.mgraz.domain.character.Mage;
-import com.cfrpg.mgraz.domain.character.Warrior;
+import com.cfrpg.mgraz.domain.Character;
 import com.cfrpg.mgraz.provider.CharacterProvider;
 
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
 import java.util.Scanner;
 
 /**
  * Created by mgraz1 on 10/22/17.
+ *
+ * This is a presentation class that shows the character
  */
 public class CharacterController {
 
@@ -27,6 +25,9 @@ public class CharacterController {
         return instance;
     }
 
+    /**
+     * It checks if the character already exist or need to create a new one
+     */
     public void startCharacter(){
         String characterName;
         do{
@@ -45,25 +46,25 @@ public class CharacterController {
         do{
             System.out.println("---------------------------------------------------------");
             System.out.println("Please select a character class: ");
-            System.out.println("w - Warrior");
-            System.out.println("m - Mage");
-            System.out.println("x - Exit");
+            System.out.println("warrior - Creates a warrior character");
+            System.out.println("mage - Creates a mage character");
+            System.out.println("exit - Leaves game");
             System.out.print("Choice: ");
 
             Scanner scanIn = new Scanner(System.in);
             String classOption = scanIn.nextLine();
             System.out.println("---------------------------------------------------------");
 
-            if(classOption.equals("x")){
+            if(classOption.equals("exit")){
                 System.out.println("Thanks for playing Console Fantasy RPG");
                 System.out.println("See you soon!!!");
                 System.exit(0);
             }
-            if(classOption.equals("w")){
+            if(classOption.equals("warrior")){
                 CharacterProvider.getInstance().createWarrior(characterName);
                 created = true;
             }
-            if(classOption.equals("m")){
+            if(classOption.equals("mage")){
                 CharacterProvider.getInstance().createMage(characterName);
                 created = true;
             }

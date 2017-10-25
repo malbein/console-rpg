@@ -1,7 +1,7 @@
 package com.cfrpg.mgraz.controller;
 
 import com.cfrpg.mgraz.domain.Monster;
-import com.cfrpg.mgraz.domain.character.Character;
+import com.cfrpg.mgraz.domain.Character;
 import com.cfrpg.mgraz.domain.location.Dungeon;
 import com.cfrpg.mgraz.domain.location.Location;
 import com.cfrpg.mgraz.exception.DeadException;
@@ -13,6 +13,8 @@ import java.util.Scanner;
 
 /**
  * Created by mgraz1 on 10/22/17.
+ *
+ * This is a presentation class that shows the battle
  */
 public class BattleController {
 
@@ -48,24 +50,28 @@ public class BattleController {
         }catch (MonsterDeadException ex){
             System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
             System.out.println("You have kill ".concat(monster.getName()).concat("!!!"));
-            character.gainExperience(monster.getXpReward());
             System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
             System.out.println("    ######### BATTLE ENDS #########    ");
+
+            character.gainExperience(monster.getXpReward());
             CharacterController.getInstance().printDetail();
             LocationProvider.getInstance().moveNextLocation();
+
         }catch (DeadException ex){
-            System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-            System.out.println(monster.getName().concat(" have kill you!!!"));
             LocationProvider.getInstance().setCurrentLocation(LocationProvider.getInstance().getInitialLocation());
             character.rest();
             resp = false;
+
+            System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+            System.out.println(monster.getName().concat(" have kill you!!!"));
             System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
             System.out.println("    ######### BATTLE ENDS #########    ");
+
             System.out.println("Press enter to continue");
             Scanner scanIn = new Scanner(System.in);
             scanIn.nextLine();
-        }finally {
         }
+
         return resp;
     }
 }

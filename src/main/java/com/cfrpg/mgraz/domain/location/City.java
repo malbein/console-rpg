@@ -10,7 +10,7 @@ public class City extends Location {
 
     public List<String> actionOptions(){
         List<String> list = new ArrayList<String>();
-        list.add("h - rest & heal");
+        list.add("rest - Rest and Heal all your Hit Points");
         return list;
     }
 }

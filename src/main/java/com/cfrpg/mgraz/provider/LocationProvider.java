@@ -1,6 +1,5 @@
 package com.cfrpg.mgraz.provider;
 
-import com.cfrpg.mgraz.domain.character.Character;
 import com.cfrpg.mgraz.domain.location.Location;
 
 import java.io.*;
@@ -83,10 +82,8 @@ public class LocationProvider {
             if(location != null){
                 currentLocation = location;
             }else{
-                System.out.println("···· LOCATION NOT LOADED ······");
             }
         }catch (Exception e){
-            System.out.println("···· LOCATION NOT LOADED ······");
         }
     }
 }

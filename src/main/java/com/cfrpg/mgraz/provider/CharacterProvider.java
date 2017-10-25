@@ -1,7 +1,8 @@
 package com.cfrpg.mgraz.provider;
 
-import com.cfrpg.mgraz.domain.character.Character;
+import com.cfrpg.mgraz.domain.Character;
 import com.cfrpg.mgraz.domain.character.Mage;
+import com.cfrpg.mgraz.domain.character.Role;
 import com.cfrpg.mgraz.domain.character.Warrior;
 
 import java.io.FileInputStream;
@@ -38,9 +39,7 @@ public class CharacterProvider {
             character = (Character) ois.readObject();
             ois.close();
             found = true;
-            System.out.println("###### Character found ######");
         }catch (Exception e){
-            System.out.println("···· CHARACTER NOT LOADED ······");
         }
         LocationProvider.getInstance().loadLocation();
 
@@ -52,11 +51,13 @@ public class CharacterProvider {
     }
 
     public void createWarrior(String characterName){
-        character = new Warrior(characterName);
+        Role role = new Warrior();
+        character = new Character(characterName, 0, role);
     }
 
     public void createMage(String characterName){
-        character = new Mage(characterName);
+        Role role = new Mage();
+        character = new Character(characterName, 0, role);
     }
 
     public void saveCharacter() throws Exception{
