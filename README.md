@@ -14,7 +14,13 @@ This is a console fantasy RPG made in java without any external library.
 
 ## For playing the game you just need to download the code
 - On the terminal "`java -jar target/console-rpg-1.0.jar`"
-- This will start the game, then follow the in-game instructions.
+- This will start the game.
+- It will ask for a character name, if the character was created before is load to continue your adventure, if not it will send you to a character creation page.
+- Once you have create your character, follow the game instructions.
+
+**Characters options:**
+- _Warrior_: Hi health, Low attack
+- _Mage_: Low health, Hi attack
 
 Hope you enjoy it!!!!
 
