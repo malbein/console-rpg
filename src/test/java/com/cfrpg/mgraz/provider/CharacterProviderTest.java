@@ -11,7 +11,7 @@ public class CharacterProviderTest {
 
     @Test
     public void existCharacter(){
-        CharacterProvider.getInstance().existCharacter("Mati");
-        assertEquals("Mati", CharacterProvider.getInstance().getCharacter().getName());
+        CharacterProvider.getInstance().existCharacter("test");
+        assertEquals("test", CharacterProvider.getInstance().getCharacter().getName());
     }
 }
