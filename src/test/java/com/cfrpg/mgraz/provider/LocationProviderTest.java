@@ -45,7 +45,7 @@ public class LocationProviderTest {
         InitialInformation.locations();
         CharacterProvider.getInstance().createWarrior("Mati");
         LocationProvider.getInstance().loadLocation();
-        assertEquals("City of the Dragon", LocationProvider.getInstance().getCurrentLocation().getName());
+        assertEquals("City of Beginning", LocationProvider.getInstance().getCurrentLocation().getName());
     }
 
     @Test

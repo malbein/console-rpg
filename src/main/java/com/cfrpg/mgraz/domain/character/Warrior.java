@@ -18,7 +18,7 @@ public class Warrior extends Role {
     }
 
     @Override
-    public int damagePerLvl() {
-        return 4;
+    public Integer doDamage() {
+        return 3 + (this.getCurrentLevel()/4);
     }
 }

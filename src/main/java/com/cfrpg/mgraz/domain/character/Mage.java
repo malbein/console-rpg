@@ -18,7 +18,7 @@ public class Mage extends Role {
     }
 
     @Override
-    public int damagePerLvl() {
-        return 3;
+    public Integer doDamage() {
+        return 4 + (this.getCurrentLevel()/3);
     }
 }

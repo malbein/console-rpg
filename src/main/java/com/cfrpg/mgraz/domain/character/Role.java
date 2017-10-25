@@ -53,10 +53,5 @@ public abstract class Role implements Attacker, Serializable {
 
     public abstract int hpMult();
 
-    public abstract int damagePerLvl();
-
-    public Integer doDamage(){
-        int damage = this.damagePerLvl();
-        return 4 + (this.getCurrentLevel()/damage);
-    }
+    public abstract Integer doDamage();
 }

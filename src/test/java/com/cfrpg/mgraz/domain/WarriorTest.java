@@ -21,7 +21,7 @@ public class WarriorTest {
         assertEquals("test", character.getName());
         assertEquals(Integer.valueOf(1), character.getCurrentLevel());
         assertEquals(Integer.valueOf(10), character.getHealth());
-        assertEquals(Integer.valueOf(4), character.doDamage());
+        assertEquals(Integer.valueOf(3), character.doDamage());
     }
 
     @Test
